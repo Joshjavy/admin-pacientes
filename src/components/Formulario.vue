@@ -32,6 +32,83 @@
                     />
                     
                 </div>
+
+                <div
+                    class="mb-5"
+                >
+                    <label
+                        class="block text-gray-700 uppercase font-bold"
+                        for="propietario">
+                        Nombre del propietario
+                    </label>
+                    <input
+                        type="text"
+                        placeholder="Nombre del propietario"
+                        id="propietario"
+                        name="propietario"
+                        class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                    />
+                    
+                </div>
+
+                <div
+                    class="mb-5"
+                >
+                    <label
+                        class="block text-gray-700 uppercase font-bold"
+                        for="email">
+                        Email
+                    </label>
+                    <input
+                        type="email"
+                        placeholder="e-mail"
+                        id="email"
+                        name="email"
+                        class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                    />
+                    
+                </div>
+
+                <div
+                    class="mb-5"
+                >
+                    <label
+                        class="block text-gray-700 uppercase font-bold"
+                        for="alta">
+                        Alta
+                    </label>
+                    <input
+                        type="date"
+                        id="alta"
+                        name="alta"
+                        class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                    />
+                    
+                </div>
+
+                <div
+                    class="mb-5"
+                >
+                    <label
+                        class="block text-gray-700 uppercase font-bold"
+                        for="sintomas">
+                        Sintomas
+                    </label>
+                    <textarea
+                        id="sintomas"
+                        name="sintomas"
+                        placeholder="Describe los sintomas"
+                        class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md resize-none h-40"
+                    />
+                    
+                    
+                </div>
+
+                <input type="submit"
+                    value="Registrar Paciente"
+                    class="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-colors "
+                
+                />
             </form>
 
         </p>
