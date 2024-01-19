@@ -1,5 +1,11 @@
 <script setup>
+import { ref } from 'vue'
 
+const nombre = ref('Max');
+
+const leerNombre=e=>{
+    nombre.value = e.target.value
+}
 </script>
 
 <template>
@@ -12,9 +18,11 @@
         <p class="text-lg mt-5 text-center mb-10">
             Añade pacientes y
             <span class="text-indigo-600 font-bold">Adminístralos</span>
+        </p>
             <form
                 class="bg-white shadow-md rounded-lg py-10 px-5 md-10"
             >
+            {{ nombre }}
                 <div
                     class="mb-5"
                 >
@@ -28,6 +36,9 @@
                         placeholder="Nombre de la mascota"
                         id="mascota"
                         name="mascota"
+                        :value="nombre"
+                        @input="leerNombre"
+
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     />
                     
@@ -110,7 +121,5 @@
                 
                 />
             </form>
-
-        </p>
     </div>
 </template>
