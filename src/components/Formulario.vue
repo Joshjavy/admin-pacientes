@@ -1,7 +1,14 @@
 <script setup>
-import { ref } from 'vue'
+import { ref,reactive } from 'vue'
 
-const nombre = ref('');
+const paciente = reactive({
+    nombre:'',
+    propietario:'',
+    email:'',
+    alta:'',
+    sintomas:'',
+
+});
 </script>
 
 <template>
@@ -18,7 +25,6 @@ const nombre = ref('');
             <form
                 class="bg-white shadow-md rounded-lg py-10 px-5 md-10"
             >
-            {{ nombre }}
                 <div
                     class="mb-5"
                 >
@@ -32,7 +38,7 @@ const nombre = ref('');
                         placeholder="Nombre de la mascota"
                         id="mascota"
                         name="mascota"
-                        v-model="nombre"
+                        v-model="paciente.nombre"
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     />
                     
@@ -51,6 +57,7 @@ const nombre = ref('');
                         placeholder="Nombre del propietario"
                         id="propietario"
                         name="propietario"
+                        v-model="paciente.propietario"
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     />
                     
