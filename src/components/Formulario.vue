@@ -9,6 +9,9 @@ const paciente = reactive({
     sintomas:'',
 
 });
+const validar = ()=>{
+    console.log('validando...')
+}
 </script>
 
 <template>
@@ -24,6 +27,7 @@ const paciente = reactive({
         </p>
             <form
                 class="bg-white shadow-md rounded-lg py-10 px-5 md-10"
+               @submit.prevent="validar"
             >
                 <div
                     class="mb-5"
