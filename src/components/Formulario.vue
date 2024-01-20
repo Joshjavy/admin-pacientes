@@ -9,12 +9,13 @@
 
     });
 
-    defineEmits([
+    const emit = defineEmits([
         'update:nombre',
         'update:propietario',
         'update:email',
         'update:alta',
-        'update:sintomas'
+        'update:sintomas',
+        'guardar-paciente'
     ]);
 
     const props = defineProps({
@@ -47,7 +48,9 @@
             alerta.tipo='error';
             return;
         }
-        console.log('despues del if')
+        emit('guardar-paciente');
+        alerta.mensaje='Todo Ok';
+        alerta.tipo='Success';
     }
 </script>
 

@@ -12,7 +12,12 @@
     alta:'',
     sintomas:'',
 
-});
+  });
+
+  const guardarPaciente=()=>{
+    pacientes.value.push(paciente);
+  }
+
 </script>
 
 <template>
@@ -26,6 +31,7 @@
         v-model:email="paciente.email"
         v-model:alta="paciente.alta"
         v-model:sintomas="paciente.sintomas"
+        @guardar-paciente="guardarPaciente"
       />
 
       <div 
