@@ -1,6 +1,14 @@
 <script setup>
-import { ref,reactive } from 'vue'
+import { reactive } from 'vue'
+import Alerta from './Alerta.vue'
 
+const alerta =reactive({
+    tipo:'',
+    mensaje:'',
+
+});
+
+ 
 const paciente = reactive({
     nombre:'',
     propietario:'',
@@ -11,9 +19,11 @@ const paciente = reactive({
 });
 const validar = ()=>{
     if(Object.values(paciente).includes('')){
-        console.log('Los campos son obligatorios')
+        alerta.mensaje='Todos los campos son obligatorios';
+        alerta.tipo='error';
         return;
     }
+    
     console.log('despues del if')
 }
 </script>
