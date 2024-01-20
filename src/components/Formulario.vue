@@ -49,8 +49,15 @@
             return;
         }
         emit('guardar-paciente');
-        alerta.mensaje='Todo Ok';
+
+        alerta.mensaje='Se ha almacenado el paciente';
         alerta.tipo='Success';
+        setTimeout(()=>{
+            Object.assign(alerta,{
+                tipo:'',
+                mensaje:'',
+            })
+        },3000)
     }
 </script>
 
