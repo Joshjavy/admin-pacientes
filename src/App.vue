@@ -1,5 +1,5 @@
 <script setup>
-  import { ref,reactive } from 'vue';
+  import { ref,reactive, onMounted, watch } from 'vue';
   import {uid }   from 'uid';
   import Header from './components/Header.vue'
   import Formulario from './components/Formulario.vue'
@@ -17,10 +17,30 @@
 
   });
 
+  watch(
+    pacientes,()=>{
+      guardarLocalStorage();
+    },{
+      deep:true
+    }
+  );
+
+  onMounted(()=>{
+    const pacientesStorage= localStorage.getItem('admsPacientes');
+    if(pacientesStorage){
+      pacientes.value = JSON.parse(pacientesStorage);
+    }
+  });
+
+  const guardarLocalStorage=()=>{
+    localStorage.setItem('admsPacientes',JSON.stringify(pacientes.value))
+  }
+
+
   const guardarPaciente=()=>{
     if(paciente.id){
       const { id }= paciente;
-      const i = pacientes.value.findIndex( pacienteState => pacienteState.id === id )
+      const i = pacientes.value.findIndex( paciente => paciente.id === id )
 
       pacientes.value[i] = {...paciente}
     }else{
@@ -53,6 +73,9 @@
     Object.assign(paciente,pacienteEditar)
   }
 
+  const eliminarPaciente= id =>{
+    pacientes.value = pacientes.value.filter(paciente=> paciente.id !== id)
+  }
 </script>
 
 <template>
@@ -85,6 +108,7 @@
           v-for="paciente in pacientes"
           :paciente="paciente"
           @actualizar-paciente="actualizarPaciente"
+          @eliminar-paciente="eliminarPaciente"
         />
       </div>
       <p 
