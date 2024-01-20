@@ -76,6 +76,7 @@ const paciente = reactive({
                         placeholder="e-mail"
                         id="email"
                         name="email"
+                        v-model="paciente.email"
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     />
                     
@@ -93,6 +94,7 @@ const paciente = reactive({
                         type="date"
                         id="alta"
                         name="alta"
+                        v-model="paciente.alta"
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     />
                     
@@ -109,6 +111,7 @@ const paciente = reactive({
                     <textarea
                         id="sintomas"
                         name="sintomas"
+                        v-model="paciente.sintomas"
                         placeholder="Describe los sintomas"
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md resize-none h-40"
                     />
