@@ -10,7 +10,11 @@ const paciente = reactive({
 
 });
 const validar = ()=>{
-    console.log('validando...')
+    if(Object.values(paciente).includes('')){
+        console.log('Los campos son obligatorios')
+        return;
+    }
+    console.log('despues del if')
 }
 </script>
 
