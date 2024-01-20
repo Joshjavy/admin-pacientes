@@ -16,7 +16,24 @@
   });
 
   const guardarPaciente=()=>{
-    pacientes.value.push(paciente);
+    pacientes.value.push({...paciente});
+
+    //reiniciar el objeto
+    // paciente.nombre='';
+    // paciente.propietario='';
+    // paciente.email='';
+    // paciente.alta='';
+    // paciente.sintomas='';
+
+    //otra forma
+    Object.assign(paciente,{
+      nombre:'',
+      propietario:'',
+      email:'',
+      alta:'',
+      sintomas:'',
+
+    })
   }
 
 </script>
