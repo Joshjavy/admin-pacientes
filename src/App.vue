@@ -2,6 +2,7 @@
   import { ref,reactive } from 'vue';
   import Header from './components/Header.vue'
   import Formulario from './components/Formulario.vue'
+  import Paciente from './components/Paciente.vue';
 
   const pacientes = ref([])
 
@@ -45,7 +46,10 @@
       <div
         v-if="pacientes.length >0 "
       >
-
+        <Paciente
+          v-for="paciente in pacientes"
+          :paciente="paciente"
+        />
       </div>
       <p 
         v-else class="mt-10 text-2xl text-center"
