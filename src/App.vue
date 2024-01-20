@@ -40,7 +40,8 @@
   }
 
   const actualizarPaciente= id =>{
-    console.log(id)
+    const pacienteEditar= pacientes.value.filter(paciente => paciente.id === id)[0]
+    Object.assign(paciente,pacienteEditar)
   }
 
 </script>
