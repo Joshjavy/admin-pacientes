@@ -66,6 +66,7 @@
         v-model:email="paciente.email"
         v-model:alta="paciente.alta"
         v-model:sintomas="paciente.sintomas"
+        :id="paciente.id"
         @guardar-paciente="guardarPaciente"
       />
 
