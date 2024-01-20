@@ -2,19 +2,10 @@
 import { reactive } from 'vue'
 import Alerta from './Alerta.vue'
 
+
 const alerta =reactive({
     tipo:'',
     mensaje:'',
-
-});
-
- 
-const paciente = reactive({
-    nombre:'',
-    propietario:'',
-    email:'',
-    alta:'',
-    sintomas:'',
 
 });
 const validar = ()=>{
@@ -57,7 +48,7 @@ const validar = ()=>{
                         placeholder="Nombre de la mascota"
                         id="mascota"
                         name="mascota"
-                        v-model="paciente.nombre"
+                        
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     />
                     
@@ -76,7 +67,7 @@ const validar = ()=>{
                         placeholder="Nombre del propietario"
                         id="propietario"
                         name="propietario"
-                        v-model="paciente.propietario"
+                        
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     />
                     
@@ -95,7 +86,7 @@ const validar = ()=>{
                         placeholder="e-mail"
                         id="email"
                         name="email"
-                        v-model="paciente.email"
+                        
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     />
                     
@@ -113,7 +104,7 @@ const validar = ()=>{
                         type="date"
                         id="alta"
                         name="alta"
-                        v-model="paciente.alta"
+                        
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     />
                     
@@ -130,7 +121,7 @@ const validar = ()=>{
                     <textarea
                         id="sintomas"
                         name="sintomas"
-                        v-model="paciente.sintomas"
+                        
                         placeholder="Describe los sintomas"
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md resize-none h-40"
                     />
