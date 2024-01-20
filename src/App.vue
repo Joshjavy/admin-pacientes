@@ -28,7 +28,7 @@
     // paciente.sintomas='';
 
     //otra forma
-    
+
     Object.assign(paciente,{
       nombre:'',
       propietario:'',
@@ -37,6 +37,10 @@
       sintomas:'',
 
     })
+  }
+
+  const actualizarPaciente= id =>{
+    console.log(id)
   }
 
 </script>
@@ -69,6 +73,7 @@
         <Paciente
           v-for="paciente in pacientes"
           :paciente="paciente"
+          @actualizar-paciente="actualizarPaciente"
         />
       </div>
       <p 
