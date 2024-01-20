@@ -30,14 +30,12 @@ const validar = ()=>{
 <template>
     <div class="w-1/2 md:w/2">
         <h2 
-            class="font-black text-3xl text-center"
+            class="font-black text-3xl text-center mb-10"
         >
-            Seguimientpo Paciente
-        </h2>
-        <p class="text-lg mt-5 text-center mb-10">
-            Añade pacientes y
+        Añade pacientes y
             <span class="text-indigo-600 font-bold">Adminístralos</span>
-        </p>
+        </h2>
+        
         <Alerta
             v-if="alerta.mensaje"
             :alerta="alerta"
