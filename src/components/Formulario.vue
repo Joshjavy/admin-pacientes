@@ -38,11 +38,11 @@
             type: String,
             required: true
         },
-        
+
     })
 
     const validar = ()=>{
-        if(Object.values(paciente).includes('')){
+        if(Object.values(props).includes('')){
             alerta.mensaje='Todos los campos son obligatorios';
             alerta.tipo='error';
             return;
@@ -81,8 +81,8 @@
                         placeholder="Nombre de la mascota"
                         id="mascota"
                         name="mascota"
+                        :value="nombre"
                         @input="$emit('update:nombre',$event.target.value)"
-
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     />
                     
@@ -101,7 +101,8 @@
                         placeholder="Nombre del propietario"
                         id="propietario"
                         name="propietario"
-                        
+                        :value="propietario"
+                        @input="$emit('update:propietario',$event.target.value)"
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     />
                     
@@ -120,7 +121,8 @@
                         placeholder="e-mail"
                         id="email"
                         name="email"
-                        
+                        :value="email"
+                        @input="$emit('update:email',$event.target.value)"
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     />
                     
@@ -138,7 +140,8 @@
                         type="date"
                         id="alta"
                         name="alta"
-                        
+                        :value="alta"
+                        @input="$emit('update:alta',$event.target.value)"
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     />
                     
@@ -155,11 +158,11 @@
                     <textarea
                         id="sintomas"
                         name="sintomas"
-                        
+                        :value="sintomas"
+                        @input="$emit('update:sintomas',$event.target.value)"
                         placeholder="Describe los sintomas"
                         class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md resize-none h-40"
                     />
-                    
                     
                 </div>
 
